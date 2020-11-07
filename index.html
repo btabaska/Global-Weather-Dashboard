@@ -17,62 +17,61 @@
       <span class="navbar-brand mb-0 h1 text-center">Weather Dashboard</span>
     </nav>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 mt-3 ml-3">
+        <!-- Search Button -->
         <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-            id="buttonInput"
+            id="inputText"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button
+            class="btn btn-outline-success my-2 my-sm-0"
+            id="buttonInput"
+            type="submit"
+          >
             Search
           </button>
         </form>
-        <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+        <!-- List of previous searches -->
+        <ul class="list-group mt-4" id="prev-search-aside"></ul>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-8 mt-3">
         <div class="row">
-          <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.
-            </p>
+          <div class="jumbotron col-sm-11">
+            <h1 class="display-4" id="jumbotroncity">
+              Welcome, Please Search a City to get Started!
+            </h1>
+            <p class="lead" id="current-date"></p>
+
             <hr class="my-4" />
-            <p>
-              It uses utility classes for typography and spacing to space
-              content out within the larger container.
-            </p>
-            <a class="btn btn-primary btn-lg" href="#" role="button"
-              >Learn more</a
-            >
+            <p id="current-temp"></p>
+            <p id="current-humidity"></p>
+            <p id="current-wind"></p>
+            <p id="uv-index-text"><span id="current-uv"></span></p>
           </div>
         </div>
-        <div class="row">5 day forcast</div>
         <div class="row">
-          <div class="card text-white bg-primary mb-3" style="max-width: 18rem">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+          <h3>5 Day Forecast:</h3>
         </div>
+        <div class="row col-sm-12" id="cardhomerow"></div>
       </div>
     </div>
+    <script
+      src="https://kit.fontawesome.com/34f88205e7.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./Assets/js/app.js"></script>
+    <script src="./Assets/js/forecast.js"></script>
+    <script src="./Assets/js/generateJumbotron.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <script src="./Assets/js/weatherAPI.js"></script>
+    <script src="./Assets/js/search.js"></script>
+    <script src="./Assets/js/citiesAside.js"></script>
+
     <!--Left aside-->
   </body>
 </html>

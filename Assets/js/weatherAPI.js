@@ -15,21 +15,15 @@ queryTodaysWeather = (input) => {
   fetch(currentWeatherEndpoint)
     .then(handleErrors)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem(cityname, JSON.stringify(data)))
-    .then(queryFiveDayForcast(cityname));
+    .then((data) => queryFiveDayForcast(cityname, data));
 };
 
-queryFiveDayForcast = (inputCity) => {
-  var cityObject = JSON.parse(localStorage.getItem(inputCity));
+queryFiveDayForcast = (inputCity, cityObject) => {
   let lat = cityObject.coord.lat;
   let lon = cityObject.coord.lon;
-  console.log("ff");
   var forecastWeatherEndpoint = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,alerts&appid=${APIkey}&${weatherUnits}`;
   fetch(forecastWeatherEndpoint)
     .then(handleErrors)
     .then((response) => response.json())
-    .then((data) => localStorage.setItem(inputCity, JSON.stringify(data)))
-    .then((data) => console.log(data));
+    .then((data) => asideGenerator(inputCity, JSON.stringify(data)));
 };
-
-queryTodaysWeather("San Francisco");
