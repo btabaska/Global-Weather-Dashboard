@@ -14,7 +14,7 @@ function handleErrors(response) {
 //Grabs todays weather
 queryTodaysWeather = (input) => {
   var cityname = input;
-  var currentWeatherEndpoint = `http://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&${weatherUnits}`;
+  var currentWeatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}&${weatherUnits}`;
   fetch(currentWeatherEndpoint)
     .then(handleErrors)
     .then((response) => response.json())
