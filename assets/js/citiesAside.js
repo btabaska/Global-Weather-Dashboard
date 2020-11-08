@@ -6,7 +6,10 @@ function asideGenerator(city, data) {
   var searchedCities = [];
   //Grabs all items from localStorage
   for (var i in localStorage) {
-    if (localStorage.getItem(i) != null) {
+    if (
+      localStorage.getItem(i) != null &&
+      localStorage.getItem(i) != "undefined"
+    ) {
       val = localStorage.getItem(i);
       searchedCities.push([i, val]);
     }
