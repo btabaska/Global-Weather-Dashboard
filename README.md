@@ -13,6 +13,6 @@ Uses the following API's and CSS Extensions
 
 ## TODO
 
-- There is a bug with creating an unexpected token in the LocalStorage on chrome. I have an error handler for it, so it doesn't break anything, but does leave a console error. Ran out of time resolving it.
+- Better error handling on invalid searches.
 
 ![Screenshot 2020-11-07 161308](https://user-images.githubusercontent.com/29316916/98454106-a28b4c80-2115-11eb-9b45-dcc217293c86.png)
