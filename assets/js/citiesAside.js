@@ -2,7 +2,9 @@
 var asideUL = document.querySelector("#prev-search-aside");
 
 function asideGenerator(city, data) {
-  localStorage.setItem(city, data);
+  if (typeof data !== "undefined") {
+    localStorage.setItem(city, data);
+  }
   var searchedCities = [];
   //Grabs all items from localStorage
   for (var i in localStorage) {
@@ -36,6 +38,8 @@ function asideGenerator(city, data) {
   searchedCities.forEach(generatePreviousSearchAside);
   searchedCities.forEach(generatePreviousSearchAsideButtons);
   //passes the information it has to the next function in the chain.
-  generateJumbotron(JSON.parse(data), city);
+  if (typeof data !== "undefined") {
+    generateJumbotron(JSON.parse(data), city);
+  }
 }
 asideGenerator();

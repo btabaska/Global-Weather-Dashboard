@@ -33,7 +33,7 @@ generateForecastCards = (city, cityName) => {
     let forecastCardTemp = document.createElement("p");
     forecastCardTemp.setAttribute("class", "card-text");
     var forecastCardTempText = document.createTextNode(
-      "Temperature: " + cityWeatherObject.daily[i].temp.day
+      "Temperature: " + cityWeatherObject.daily[i].temp.day + "°F"
     );
     forecastCardTemp.appendChild(forecastCardTempText);
     forecastCardBodyDiv.appendChild(forecastCardTemp);

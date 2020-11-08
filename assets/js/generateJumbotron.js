@@ -2,11 +2,11 @@
 generateJumbotron = (city, cityName) => {
   cityWeatherObject = city;
   document.querySelector("#current-temp").innerHTML =
-    "Temperature: " + cityWeatherObject.current.temp;
+    "Temperature: " + cityWeatherObject.current.temp + "°F";
   document.querySelector("#current-humidity").innerHTML =
-    "Humidity: " + cityWeatherObject.current.humidity;
+    "Humidity: " + cityWeatherObject.current.humidity + "%";
   document.querySelector("#current-wind").innerHTML =
-    "Wind Speed: " + cityWeatherObject.current.wind_speed;
+    "Wind Speed: " + cityWeatherObject.current.wind_speed + " MPH";
   document.querySelector("#current-uv").innerHTML =
     "UV Index: " + cityWeatherObject.current.uvi;
   //calls the uvIndex function from app.js
