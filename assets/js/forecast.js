@@ -3,7 +3,7 @@ generateForecastCards = (city, cityName) => {
   let cityWeatherObject = city;
   var cardHomeRow = document.querySelector("#cardhomerow");
 
-  //this goes into a for loop
+  //For loop for every card returned up to card 5 in order to get a 5 day forecast
   for (let i = 0; i < 5; i++) {
     let forecastCard = document.createElement("div");
     forecastCard.setAttribute(
@@ -19,7 +19,7 @@ generateForecastCards = (city, cityName) => {
     forecastCardHeader.appendChild(forecastCardHeaderText);
     forecastCard.appendChild(forecastCardHeader);
     var forecastCardBodyDiv = document.createElement("div");
-
+    //emojii
     let forecastCardEmojii = document.createElement("p");
     forecastCardEmojii.setAttribute("class", "card-text");
     var forecastCardEmojiiText = document.createElement("i");
@@ -29,7 +29,7 @@ generateForecastCards = (city, cityName) => {
     );
     forecastCardEmojii.appendChild(forecastCardEmojiiText);
     forecastCardBodyDiv.appendChild(forecastCardEmojii);
-    //
+    //temperature
     let forecastCardTemp = document.createElement("p");
     forecastCardTemp.setAttribute("class", "card-text");
     var forecastCardTempText = document.createTextNode(
@@ -37,7 +37,7 @@ generateForecastCards = (city, cityName) => {
     );
     forecastCardTemp.appendChild(forecastCardTempText);
     forecastCardBodyDiv.appendChild(forecastCardTemp);
-    //
+    //humidity
     let forecastCardHumidity = document.createElement("p");
     forecastCardHumidity.setAttribute("class", "card-text");
     var forecastCardHumidityText = document.createTextNode(
@@ -47,12 +47,12 @@ generateForecastCards = (city, cityName) => {
     forecastCardBodyDiv.appendChild(forecastCardHumidity);
     //
 
-    //
+    //append all
     forecastCard.appendChild(forecastCardBodyDiv);
     cardHomeRow.appendChild(forecastCard);
   }
 };
-
+//Switch statement used to select the correct emojii
 weatherEmojiiPicker = (weatherStatus) => {
   switch (weatherStatus) {
     case "Clouds":

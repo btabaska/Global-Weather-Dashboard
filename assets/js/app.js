@@ -6,6 +6,7 @@ clearOutputDiv = (selector) => {
   }
 };
 
+//Helper function to determine coloring for the UV
 uvIndexHighlighting = (uv) => {
   if (uv >= 11) {
     return "purple";
